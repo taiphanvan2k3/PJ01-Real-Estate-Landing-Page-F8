@@ -1,0 +1,111 @@
+* {
+    box-sizing: border-box;
+}
+
+html {
+    font-size: 62.5%;
+}
+
+body {
+    /* Do đang thiết lập 1rem = 10px */
+    font-size: 1.6rem;
+    font-family: 'Poppins', sans-serif;
+}
+
+:root{
+    --primary-color: #0F1B4C;
+}
+
+/* ==========Common========= */
+.content {
+    /* Khi mở full màn hình thì 1110px sẽ nhỏ hơn kích thước tối đa trình duyệt
+    nhưng khi trình duyệt bị co nhỏ lại mà ta vẫn dùng width: 1110px như thế thì sẽ
+    bị mất nội dung bên phải. Do đó sẽ dùng thêm kích thước tối đa của content header là
+    100%. Và sẽ để 2 bên cách ra 24px nên sẽ -48px. Khi dùng margin: auto thì nó sẽ tự
+    động căn giữa lại*/
+    width: 1110px;
+    max-width: calc(100% - 48px);
+    margin: 0 auto;
+}
+
+a {
+    /* Do hầu hết thẻ a không có gạch chân nên dùng chung luôn */
+    text-decoration: none;
+}
+
+.btn {
+    /*  */
+    display: inline-block;
+    min-width: 98px;
+    border-radius: 8px;
+    background: var(--primary-color);
+    color: #FFFFFF;
+    padding: 18px 16px;
+    text-align: center;
+    font-size: 1.4rem;
+    font-weight: 500;
+}
+
+.btn:hover {
+    opacity: 0.9;
+}
+
+/* =================Header================= */
+.header {
+    /* Dựa vào preview của  trang web thì thấy phần header dường như full
+    màn hình nên sẽ đặt là 100vh chứ không đặt fix cứng height*/
+    background: #E6F0FF;
+    height: 100vh;
+}
+
+
+/* =================Nav================= */
+.navbar {
+    display: flex;
+    align-items: center;
+    /* Dùng margin-top thì bị margin-collapse nên dùng padding-top
+    Dùng padding-top trong trường hợp này ổn vì navbar có background kế thừa từ 
+    background */
+    padding-top: 47px;
+}
+
+.navbar .navigation {
+    display: flex;
+    /* Không nên dùng display: inline-block; cho các thẻ li vì nó tạo ra các khoảng
+    trắng do dấu xuống hàng */
+}
+
+.navbar .action {
+    /* Để các nút sign-in, sign-up nằm sát bên phải */
+    margin-left: auto;
+}
+
+.navbar ul {
+    /* Khoảng cách giữa logo và Home là 64px nhưng đã Home đã có đệm trái 14px rồi
+    nên giờ marin-left chỉ còn 50px thôi */
+    margin-left: 50px;
+}
+
+.navbar ul a {
+    color: #4F5361;
+    font-size: 1.4rem;
+    font-weight: 500;
+    /* Chủ yếu tăng khoảng cách giữa các thẻ a và tăng vùng khi rê chuột vào
+    nên không cần dùng display: inline-block; cũng được */
+    padding: 8px 14px;
+}
+
+.navbar ul a:hover {
+    text-decoration: underline rgb(135, 187, 234) 3px;
+}
+
+.navbar .action-link {
+    color: var(--primary-color);
+    font-size: 1.4rem;
+    font-weight: 500;
+    margin-right: 18px;
+}
+
+.navbar .action-btn {
+    padding: 13px 16px;
+}
