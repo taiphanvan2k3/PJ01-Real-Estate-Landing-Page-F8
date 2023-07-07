@@ -12,7 +12,7 @@ body {
     font-family: 'Poppins', sans-serif;
 }
 
-:root{
+:root {
     --primary-color: #0F1B4C;
 }
 
@@ -54,6 +54,7 @@ a {
 .header {
     /* Dựa vào preview của  trang web thì thấy phần header dường như full
     màn hình nên sẽ đặt là 100vh chứ không đặt fix cứng height*/
+    position: relative;
     background: #E6F0FF;
     height: 100vh;
 }
@@ -66,7 +67,7 @@ a {
     /* Dùng margin-top thì bị margin-collapse nên dùng padding-top
     Dùng padding-top trong trường hợp này ổn vì navbar có background kế thừa từ 
     background */
-    padding-top: 47px;
+    padding-top: 38px;
 }
 
 .navbar .navigation {
@@ -108,4 +109,63 @@ a {
 
 .navbar .action-btn {
     padding: 13px 16px;
+}
+
+/* ==============Hero========== */
+.hero {
+    /* margin-top ở đây không bị margin-collapse, ở nav mới bị */
+    margin-top: 130px;
+}
+
+.hero .info {
+    /* Không dùng width: 559px như mẫu thiết kế mà quy về % */
+    width: 51%;
+}
+
+.hero .sub-title {
+    color: #687690;
+    font-size: 1.8rem;
+    font-weight: 500;
+    /* 27px sẽ là 1.5 của font-size */
+    line-height: 1.5;
+    /* 0.01em sẽ tính theo font-size tức là 0.01*18 = 0.18px */
+    letter-spacing: 0.01em;
+}
+
+.hero .title {
+    margin-top: 8px;
+    font-size: 6.4rem;
+    font-weight: 700;
+    line-height: 76px;
+    color: #000336;
+}
+
+.hero .desc {
+    margin-top: 30px;
+    font-size: 1.8rem;
+    font-weight: 400;
+    line-height: 1.78em;
+    color: #5A6473;
+}
+
+.hero .hero-cta {
+    margin-top: 40px;
+    min-width: 170px;
+    border-radius: 12px;
+    font-size: 1.3rem;
+}
+
+.hero .hero-img {
+    /* Ảnh này ở sát dưới bottom của header nên sẽ
+    căn chỉnh vị trí nó theo header. Do đó cho position: absolute vào .hero-img
+    và position: relative vào header */
+    position: absolute;
+
+    /* Tính toán lại right chứ không để right fix cứng là 65px vì tùy vào màn hình mà độ rộng to nhỏ khác nhau
+    Nếu ta dùng right: 65px thì khi màn hình rộng hơn thì bức hình do có right: 65px nên sẽ bị dịch ra bên phải
+    Và ta dùng 1110px mà không dùng 100% là 100% lúc này là chiều rộng của thẻ mà .hero-img đang phụ thuộc, tức là thẻ header
+    Mà thẻ header lại không có được set width nên 100% lúc này sẽ là chiều rộng của thẻ header
+    */
+    right: calc((100vw - 1110px) /2 - 100px);
+    bottom: 0;
 }
