@@ -37,7 +37,7 @@ a {
     /*  */
     display: inline-block;
     min-width: 98px;
-    border-radius: 8px;
+    border-radius: 12px;
     background: var(--primary-color);
     color: #FFFFFF;
     padding: 18px 16px;
@@ -48,6 +48,19 @@ a {
 
 .btn:hover {
     opacity: 0.9;
+}
+
+.row {
+    display: flex;
+    justify-content: space-between;
+}
+
+.line-clamp {
+    /* Chỉ chấp nhận số dòng <=2 */
+    display: -webkit-box;
+    -webkit-line-clamp: var(--line-clamp, 2);
+    -webkit-box-orient: vertical;
+    overflow: hidden;
 }
 
 /* =================Header================= */
@@ -109,6 +122,7 @@ a {
 
 .navbar .action-btn {
     padding: 13px 16px;
+    border-radius: 8px;
 }
 
 /* ==============Hero========== */
@@ -151,7 +165,6 @@ a {
 .hero .hero-cta {
     margin-top: 40px;
     min-width: 170px;
-    border-radius: 12px;
     font-size: 1.3rem;
 }
 
@@ -173,15 +186,6 @@ a {
 /* ============ Clients ================ */
 .clients {
     margin-top: 122px;
-}
-
-.clients .row {
-    display: flex;
-    justify-content: space-between;
-    /* 
-    Nếu dùng kiểu .clients .row .star { margin-left: auto; thì phải cho thêm display: inline-block; vào thẻ star}
-    Dùng 
-    */
 }
 
 .clients .row-second {
@@ -289,5 +293,124 @@ a {
 .guide-cta .btn {
     min-width: 170px;
     font-size: 1.3rem;
+}
+
+/* ==================== Features =================== */
+.feature {
+    margin-top: 120px;
+    padding: 110px 0;
+    padding-bottom: 185px;
+    background: #F5FAFE;
+}
+
+.feature .sub-title {
+    color: #000339;
+    font-size: 3.5rem;
+    font-weight: 600;
+    line-height: 1;
+}
+
+.feature .desc {
+    color: #5A6473;
+    font-size: 1.6rem;
+    font-weight: 400;
+    line-height: 1.875;
+}
+
+.feature .link {
+    display: flex;
+    align-items: center;
+    color: #0689FF;
+    font-size: 1.8rem;
+    font-weight: 600;
+}
+
+.feature .row {
+    /* Đã CSS cho class .row common ở trên */
+    margin-top: 15px;
+}
+
+.feature .link .arrow {
+    /* Do nội dung của span có font-size lớn nên để cho nội dung và dấu mũi tên nằm trên 1 hàng
+    C1: dùng position: relative;
+    top: -2px;
+    Để Định vị với vị trí ban đầu của nó
+    */
+
+    /* C2: display: flex; align-items: center; vào thẻ cha */
+    margin-left: 8px;
+}
+
+.feature .list {
+    margin-top: 70px;
+    display: flex;
+    /* Tạo ra khoảng cách giữa các item là 30px */
+    gap: 30px;
+}
+
+.feature .item {
+    /* Để các flex-item được chia đều chiều rộng của flex-container */
+    flex: 1;
+    background: #FFF;
     border-radius: 12px;
+}
+
+.feature .item .thumb {
+    /* Để chiều rộng của bức ảnh bằng chiều rộng của thẻ cha nên dùng width: 100% */
+    width: 100%;
+    height: 227px;
+    /* Lấp đầy khung hình và chấp nhận mất một số phần bức ảnh */
+    object-fit: cover;
+
+    /* Trong HTML nếu thẻ con vẫn có thẻ lòi ra ngoài thẻ cha
+    dù thẻ cha đã border-radius rồi */
+    border-top-left-radius: 12px;
+    border-top-right-radius: 12px;
+}
+
+.feature .item .body {
+    padding: 17px 20px 24px;
+}
+
+.feature .item .title a {
+    color: #000339;
+    font-size: 2rem;
+    font-weight: 600;
+    /* Nếu sau này xuất hiện nhiều dòng thì có line-height này
+    Bản thiết kế có line-height: 1 là do chỉ có 1 dòng */
+    line-height: 1.5;
+}
+
+.feature .item .desc {
+    margin-top: 11px;
+    color: #A3A6AB;
+    font-size: 1.4rem;
+    font-weight: 500;
+    word-break: break-all;
+}
+
+.feature .item .info {
+    margin-top: 21px;
+    display: flex;
+    align-items: center;
+}
+
+.feature .item .label {
+    margin-left: 8px;
+    color: #4D4D52;
+    font-size: 1.4rem;
+    font-weight: 500;
+    letter-spacing: 0.01em;
+}
+
+.feature .item .icon {
+    margin-left: 23px;
+}
+
+.feature .item .icon:first-child {
+    margin-left: 0;
+}
+
+.icon+.icon {
+    margin-left: 50px;
 }
