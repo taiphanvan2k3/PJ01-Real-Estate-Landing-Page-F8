@@ -169,3 +169,33 @@ a {
     right: calc((100vw - 1110px) /2 - 100px);
     bottom: 0;
 }
+
+/* ============ Clients ================ */
+.clients {
+    margin-top: 122px;
+}
+
+.clients .row {
+    display: flex;
+    justify-content: space-between;
+    /* 
+    Nếu dùng kiểu .clients .row .star { margin-left: auto; thì phải cho thêm display: inline-block; vào thẻ star}
+    Dùng 
+    */
+}
+
+.clients .row-second {
+    margin-top: 23px;
+}
+
+.clients .desc {
+    color: #7D8589;
+    font-size: 1.6rem;
+    font-weight: 500;
+    line-height: 1.25;
+}
+
+.clients .images{
+    margin-top: 70px;
+    align-items: center;
+}
