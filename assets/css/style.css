@@ -195,7 +195,99 @@ a {
     line-height: 1.25;
 }
 
-.clients .images{
+.clients .images {
     margin-top: 70px;
     align-items: center;
+}
+
+/* ============Guides================ */
+.guides {
+    margin-top: 200px;
+}
+
+.guides .sub-title {
+    position: relative;
+    color: #000339;
+    text-align: center;
+    font-size: 3.5rem;
+    font-weight: 600;
+    line-height: 1;
+}
+
+.guides .sub-title::before {
+    /* Để canh before tương đối so với sub-title */
+    position: absolute;
+    top: -10px;
+
+    /* 50% này là 50% chiều rộng thẻ cha chứa nó có position: relative */
+    left: 50%;
+
+    /* -50% này là 50% kích thước của nó */
+    transform: translateX(-50%);
+    content: "";
+    display: inline-block;
+    width: 41px;
+    height: 4px;
+    border-radius: 12px;
+    background: #000339;
+}
+
+.guides .desc {
+    width: 459px;
+    max-width: 100%;
+    margin: 0 auto;
+    margin-top: 20px;
+    text-align: center;
+    color: #5A6473;
+    font-size: 1.6rem;
+    font-weight: 400;
+    line-height: 1.875;
+}
+
+/* =========== List guides =============== */
+.list-guide {
+    margin-top: 70px;
+    display: flex;
+    justify-content: center;
+}
+
+.list-guide .guide-item {
+    margin: 0 70px;
+    /* Lúc này sẽ căn giữa được thẻ con bên trong nó */
+    text-align: center;
+}
+
+.guide-item .title {
+    margin-top: 26px;
+    /* Nó đã thừa kế text-align: center; */
+    color: #3B3C45;
+    font-family: Poppins;
+    font-size: 2rem;
+    font-weight: 500;
+    line-height: 1.1;
+}
+
+.guide-item .link {
+    /* Đây là thẻ a nên display: inline-block để margin-top có tác dụng*/
+    display: inline-block;
+    margin-top: 10px;
+    color: #0689FF;
+    margin-left: 8px;
+    font-size: 1.4rem;
+    font-weight: 600;
+}
+
+.guide-item .arrow {
+    margin-left: 6px;
+}
+
+.guides .guide-cta {
+    margin-top: 50px;
+    text-align: center;
+}
+
+.guide-cta .btn {
+    min-width: 170px;
+    font-size: 1.3rem;
+    border-radius: 12px;
 }
