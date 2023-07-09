@@ -185,7 +185,9 @@ a {
 
 /* ============ Clients ================ */
 .clients {
-    margin-top: 122px;
+    margin-top: 79px;
+    background: #fff;
+    padding-top: 43px 0 64px;
 }
 
 .clients .row-second {
@@ -206,7 +208,8 @@ a {
 
 /* ============Guides================ */
 .guides {
-    margin-top: 200px;
+    margin-top: 40px;
+    padding: 93px 0 79px;
 }
 
 .guides .sub-title {
@@ -297,7 +300,7 @@ a {
 
 /* ==================== Features =================== */
 .feature {
-    margin-top: 120px;
+    margin-top: 41px;
     padding: 110px 0;
     padding-bottom: 185px;
     background: #F5FAFE;
