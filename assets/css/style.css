@@ -703,8 +703,8 @@ a {
 .footer .social {
     margin-top: 40px;
     display: flex;
-    justify-content: space-between;
     width: 117px;
+    gap: 17px;
 }
 
 .footer .social-link {
@@ -715,6 +715,7 @@ a {
 
     width: 28px;
     height: 28px;
+    background: #F9F9F9;
 }
 
 .footer .social-link:hover {
