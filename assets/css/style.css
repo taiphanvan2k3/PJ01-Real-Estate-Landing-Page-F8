@@ -588,3 +588,59 @@ a {
     font-size: 1.8rem;
     font-weight: 500;
 }
+
+/* ================= Subscription ================== */
+.subscription {
+    margin-top: 90px;
+}
+
+.subscription .body {
+    /* Để căn giữa flex-item theo main-axis */
+    display: flex;
+    align-items: center;
+    position: relative;
+
+    /* Đặt height cố định chứ không cho nó tăng theo nội dung chữ bên trong. Vì home-illustration phụ thuộc vào chiều cao của .body này
+    Khi chiều cao .body này quá lớn thì bức ảnh không còn dư phần bên ngoài nữa*/
+    height: 370px;
+    border-radius: 20px;
+    background: #063183;
+}
+
+.subscription .body .info {
+    /* Đặt width cho info để không cho chữ tràn ra khi nội dung dài */
+    width: 671px;
+    padding: 0 80px;
+}
+
+.subscription .info .sub-title {
+    color: #FFF;
+    font-size: 3.5rem;
+    font-weight: 600;
+    line-height: 1.5;
+}
+
+.subscription .info .desc {
+    margin-top: 15px;
+    color: #FFF;
+    font-size: 1.6rem;
+    font-weight: 400;
+    line-height: 1.88;
+}
+
+.subscription .info .btn {
+    margin-top: 20px;
+    min-width: 151px;
+    color: #002366;
+    font-size: 13px;
+    font-weight: 500;
+    border-radius: 12px;
+    background: #FFF;
+}
+
+.subscription .image{
+    bottom: 0;
+    left: 60%;
+    /* right: 221px; */
+    position: absolute;
+}
