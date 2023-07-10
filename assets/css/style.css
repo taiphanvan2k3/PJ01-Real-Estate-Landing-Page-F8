@@ -50,10 +50,10 @@ a {
     opacity: 0.9;
 }
 
-.row {
+/* .row {
     display: flex;
     justify-content: space-between;
-}
+} */
 
 .line-clamp {
     /* Chỉ chấp nhận số dòng <=2 */
@@ -188,6 +188,11 @@ a {
     margin-top: 79px;
     background: #fff;
     padding-top: 43px 0 64px;
+}
+
+.clients .row {
+    display: flex;
+    justify-content: space-between;
 }
 
 .clients .row-second {
@@ -329,7 +334,8 @@ a {
 }
 
 .feature .row {
-    /* Đã CSS cho class .row common ở trên */
+    display: flex;
+    justify-content: space-between;
     margin-top: 15px;
 }
 
@@ -416,4 +422,169 @@ a {
 
 .icon+.icon {
     margin-left: 50px;
+}
+
+/* =================== Stats ================== */
+.stats {
+    margin-top: 75px;
+    padding: 50px 0;
+}
+
+.stats .content {
+    width: 1048px;
+}
+
+.stats .row {
+    display: flex;
+}
+
+.stats .img-block,
+.stats .info {
+    width: 50%;
+}
+
+.stats .info {
+    padding: 79px 0 0 165px;
+}
+
+.stats .img-block .image {
+    display: block;
+    margin-left: auto;
+    border-radius: 12px;
+    width: 400px;
+    height: 460px;
+    /* Để không bị méo ảnh */
+    object-fit: cover;
+}
+
+.stats .row .sub-title {
+    position: relative;
+    color: #000339;
+    font-size: 3.5rem;
+    font-weight: 600;
+    line-height: 1.3;
+    width: 269px;
+}
+
+.stats .row .sub-title::before {
+    position: absolute;
+    left: 0;
+    top: -10px;
+    content: "";
+    display: inline-block;
+    width: 41px;
+    height: 4px;
+    border-radius: 12px;
+    background: #000339;
+}
+
+.stats .row .info .desc {
+    margin-top: 20px;
+    width: 309px;
+    color: #5A6473;
+    font-size: 1.6rem;
+    font-weight: 400;
+    line-height: 1.88;
+}
+
+/* ============ Stats trend */
+.stats .img-block {
+    position: relative;
+}
+
+.stats-trend {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 239px;
+    border-radius: 0px 0px 12px 12px;
+    box-shadow: 90px 85px 100px 0px rgba(0, 0, 0, 0.06);
+    background: #FFF;
+    padding: 45px 22px 40px;
+}
+
+.stats-trend .row {
+    align-items: center;
+}
+
+.stats-trend .row .value {
+    color: #000339;
+    font-size: 2.6rem;
+    font-weight: 700;
+    letter-spacing: 0.01em;
+}
+
+.stats-trend .desc {
+    margin-top: 8px;
+    width: 194px;
+    color: #A7A7A7;
+    font-size: 1.2rem;
+    font-weight: 400;
+    line-height: 1.5;
+}
+
+.stats-trend .row .icon {
+    width: 25px;
+    height: 18px;
+    object-fit: contain;
+    margin-left: auto;
+}
+
+.stats-trend .seperate {
+    margin-top: 25px;
+    height: 1.2px;
+    background: #E9E9E9;
+}
+
+/* Khối avatar */
+.stats .avatar-block {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 16px 14px;
+    margin-top: 26px;
+}
+
+.stats .avatar-group {
+    display: flex;
+}
+
+.stats .avatar-group .avatar {
+    width: 16px;
+    height: 16px;
+    object-fit: cover;
+    border-radius: 50%;
+    margin-left: -3px;
+    background: var(--bg-color, #FFF);
+    color: #FFF;
+    font-weight: 450;
+    font-size: 0.7rem;
+    letter-spacing: -0.145px;
+    /* text-align: center;
+        line-height: 16px; */
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.stats .avatar-group .avatar:first-child {
+    margin-left: 0;
+}
+
+.stats .row-qty {
+    padding: 0 32px;
+    justify-content: space-between;
+    margin-top: 110px;
+}
+
+.stats .qty-item .qty {
+    color: #000;
+    font-size: 6.4rem;
+    font-weight: 600;
+}
+
+.stats .qty-item .qty-desc {
+    margin-top: 24px;
+    color: #7B8087;
+    font-size: 1.8rem;
+    font-weight: 500;
 }
