@@ -12,6 +12,12 @@ body {
     font-family: 'Poppins', sans-serif;
 }
 
+html,
+body {
+    /* Do mỗi trình duyệt có thể khác nhau về thanh cuộn ở html,body nên đặt ở cả 2 luôn */
+    scroll-behavior: smooth;
+}
+
 :root {
     --primary-color: #0F1B4C;
 }
@@ -50,11 +56,6 @@ a {
     opacity: 0.9;
 }
 
-/* .row {
-    display: flex;
-    justify-content: space-between;
-} */
-
 .line-clamp {
     /* Chỉ chấp nhận số dòng <=2 */
     display: -webkit-box;
@@ -64,12 +65,31 @@ a {
 }
 
 /* =================Header================= */
-.header {
+.fixed-header {
+    background: #E6F0FF;
+    padding-top: 26px;
+    position: sticky;
+    top: -26px;
+
+    /* Dùng z-index để nội dung của nó được nổi lên trên, nếu không thiết lập thì khi kéo xuống nó bị các phần tử
+    khác đè lên */
+    z-index: 1;
+}
+
+.hero-wrap {
+    /* Thêm display: flex; vào để khi margin-top cho .hero thì không bị margin-collapse
+    với thẻ cha */
+    display: flex;
+    /* Dùng column để tránh trường hợp nếu chứa nhiều thẻ con thì nó sẽ không bị nằm ngang */
+    flex-direction: column;
+
     /* Dựa vào preview của  trang web thì thấy phần header dường như full
     màn hình nên sẽ đặt là 100vh chứ không đặt fix cứng height*/
     position: relative;
     background: #E6F0FF;
-    height: 100vh;
+
+    /* Trừ 90px do fixed-header có chiều cao là 90px */
+    height: calc(100vh - 90px);
 }
 
 
@@ -77,10 +97,8 @@ a {
 .navbar {
     display: flex;
     align-items: center;
-    /* Dùng margin-top thì bị margin-collapse nên dùng padding-top
-    Dùng padding-top trong trường hợp này ổn vì navbar có background kế thừa từ 
-    background */
-    padding-top: 38px;
+    /* Dùng margin-top thì bị margin-collapse nên dùng padding-top*/
+    padding: 12px 0;
 }
 
 .navbar .navigation {
@@ -170,8 +188,8 @@ a {
 
 .hero .hero-img {
     /* Ảnh này ở sát dưới bottom của header nên sẽ
-    căn chỉnh vị trí nó theo header. Do đó cho position: absolute vào .hero-img
-    và position: relative vào header */
+    căn chỉnh vị trí nó theo hero-wrap. Do đó cho position: absolute vào .hero-img
+    và position: relative vào .hero-wrap */
     position: absolute;
 
     /* Tính toán lại right chứ không để right fix cứng là 65px vì tùy vào màn hình mà độ rộng to nhỏ khác nhau
@@ -211,7 +229,7 @@ a {
     align-items: center;
 }
 
-.clients .images a{
+.clients .images a {
     display: flex;
     align-items: center;
     height: 90px;
@@ -219,9 +237,10 @@ a {
     border-radius: 12px;
 }
 
-.clients .images a:hover{
+.clients .images a:hover {
     box-shadow: 0px 10px 20px 0px rgba(0, 0, 0, 0.10);
 }
+
 /* ============Guides================ */
 .guides {
     margin-top: 40px;
